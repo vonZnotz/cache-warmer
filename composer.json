@@ -1,0 +1,16 @@
+{
+	"require": {
+		"symfony/config": "^3.2",
+		"symfony/dependency-injection": "^3.2",
+		"symfony/yaml": "^3.2"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^6.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"vonZnotz\\CacheWarmer\\": "src/CacheWarmer/",
+			"vonZnotz\\CacheWarmer\\Test\\Functional\\": "test/function/CacheWarmer/"
+		}
+	}
+}
