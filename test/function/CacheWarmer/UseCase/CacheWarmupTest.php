@@ -17,6 +17,6 @@ class CacheWarmupTest extends TestCase
 
     public function testCurlWarmerWithTYPO3PageTree()
     {
-
+        $cacheWarmup = $this->app->getCacheWarmup();
     }
 }
