@@ -2,7 +2,9 @@
 
 namespace vonZnotz\CacheWarmer;
 
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use vonZnotz\CacheWarmer\Config\Config;
 
 class App
@@ -14,8 +16,8 @@ class App
 
     public function __construct()
     {
-        $container = new \Symfony\Component\DependencyInjection\ContainerBuilder();
-        $loader = new \Symfony\Component\DependencyInjection\Loader\YamlFileLoader($container, new \Symfony\Component\Config\FileLocator(__DIR__ . '/resources/config'));
+        $container = new ContainerBuilder();
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/resources/config'));
         $loader->load('services.yml');
         $this->container = $container;
     }
