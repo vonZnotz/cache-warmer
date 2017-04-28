@@ -1,0 +1,3 @@
+parameters:
+    cache_warmer.sitemap_provider_concrete: '@cache_warmer.service_typo3_sitemap_provider'
+    cache_warmer.cache_warmer_concrete: '@cache_warmer.service_curl_cache_warmer'

@@ -1,6 +1,6 @@
 <?php
 
-namespace vonZnotz\CacheWarmer\SitemapProvider;
+namespace vonZnotz\CacheWarmer\Service\SitemapProvider;
 
 class SitemapProviderAbstract implements SitemapProviderInterface
 {

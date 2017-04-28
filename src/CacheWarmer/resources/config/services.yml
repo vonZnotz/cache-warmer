@@ -1,10 +1,13 @@
+imports:
+    - { resource: 'parameters.yml' }
+
 services:
     cache_warmer.usecase_cache_warmup:
         class: \vonZnotz\CacheWarmer\UseCase\CacheWarmup
-        arguments: ['@cache_warmer.service_cache_warmer', '@cache_warmer.service_sitemap_provider']
+        arguments: ['%cache_warmer.cache_warmer_concrete%', '%cache_warmer.sitemap_provider_concrete%']
 
-    cache_warmer.service_cache_warmer:
-        class: \vonZnotz\CacheWarmer\Service\CacheWarmer\CacheWarmerInterface
+    cache_warmer.service_typo3_sitemap_provider:
+        class: \vonZnotz\CacheWarmer\Service\SitemapProvider\TYPO3SitemapProvider
 
-    cache_warmer.service_sitemap_provider:
-        class: \vonZnotz\CacheWarmer\Service\CacheWarmer\SitemapProviderInterface
+    cache_warmer.service_curl_cache_warmer:
+        class: \vonZnotz\CacheWarmer\Service\CacheWarmer\CurlCacheWarmer
